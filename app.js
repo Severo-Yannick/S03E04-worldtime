@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+// Import du routeur
+const router = require('./my_modules/router');
 
 // Module Dayjs et les plugins pour gérer les timezones et les formats "localisés"
 const dayjs = require('dayjs');
@@ -14,10 +16,8 @@ dayjs.extend(localizedFormat);
 require('dayjs/locale/fr'); 
 dayjs.locale('fr');
 
-// Page d'accueil
-app.get('/', (req, res) => {
-  res.send('Hello from server express')
-;})
+// Utilisation du routeur par le serveur
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Le serveur écoute sur http://localhost:${PORT}`);
