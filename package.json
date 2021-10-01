@@ -1,0 +1,19 @@
+{
+  "name": "s03e04-worldtime",
+  "version": "1.0.0",
+  "description": "Découvrons les timezones et Express JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Severo-Yannick/S03E04-worldtime.git"
+  },
+  "author": "Severo Yannick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Severo-Yannick/S03E04-worldtime/issues"
+  },
+  "homepage": "https://github.com/Severo-Yannick/S03E04-worldtime#readme"
+}
