@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Severo-Yannick/S03E04-worldtime#readme",
   "dependencies": {
     "dayjs": "^1.10.7",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
   }
 }
