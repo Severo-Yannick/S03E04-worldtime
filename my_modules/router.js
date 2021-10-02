@@ -20,12 +20,22 @@ router.get("/city/:capital", (req, res) => {
   for (testCapital of listOfCapitals) {
     if (testCapital.name.toLowerCase() === askedCapital) {
       foundCapital = testCapital;
-      res.send(`
-        <h1>${foundCapital.name}</h1>
-        <p>${foundCapital.tz}</p>
-        <a href='/'>Retour à l'accueil<a>
+      break;
+    } 
+  }
+
+  if (foundCapital) {
+    res.send(`
+      <h1>${foundCapital.name}</h1>
+      <p>${foundCapital.tz}</p>
+      <a href='/'>Retour à l'accueil<a>
       `);
-    }
+  }
+  else {
+    res.status(404).send(`
+      <h1>Page ${req.url} non trouvée<h1>
+      <a href='/'>Retour à l'accueil<a>
+    `);
   }
 });
 
