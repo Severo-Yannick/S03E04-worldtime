@@ -8,6 +8,10 @@ const capitalCities = [
     tz: "Europe/London",
   },
   {
+    name: "Madrid",
+    tz: "Europe/Madrid",
+  },
+  {
     name: "Washington",
     tz: "US/Eastern",
   },
