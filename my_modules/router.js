@@ -24,16 +24,16 @@ router.get("/city/:capital", (req, res) => {
       break;
     } 
   }
-
   if (foundCapital) {
     // Date courante au format dayJS et Time Zone de la capitale
     let currentDate = dayjs().tz(foundCapital.tz);
+    
     res.send(`
       <h1>Capitale: ${foundCapital.name}</h1>
       <h3>Time Zone: ${foundCapital.tz}</h3>
-      <h3>Date et Heure: ${currentDate}</h3>
+      <h3>Date et Heure: ${currentDate.format('LLLL')}</h3>
       <a href='/'>Retour à l'accueil<a>
-      `);
+    `);
   }
   else {
     res.status(404).send(`
