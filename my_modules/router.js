@@ -5,6 +5,10 @@ const express = require("express");
 const router = express.Router();
 // La liste des capitales
 const listOfCapitals = require("./capitalCities");
+// Mettre en majuscule la première lettre de chaque mots - bonus perso
+const capitalizeFirstLetter = (text) => {
+  return text.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+}
 
 // Page d'accueil
 router.get("/", (req, res) => {
@@ -31,7 +35,7 @@ router.get("/city/:capital", (req, res) => {
     res.send(`
       <h1>Capitale: ${foundCapital.name}</h1>
       <h3>Time Zone: ${foundCapital.tz}</h3>
-      <h3>Date et Heure: ${currentDate.format('LLLL')}</h3>
+      <h3>Date et Heure: ${capitalizeFirstLetter(currentDate.format('LLLL'))}</h3>
       <a href='/'>Retour à l'accueil<a>
     `);
   }
